@@ -79,6 +79,9 @@ pub async fn setup(
     data: web::Data<AppState>,
     body: web::Json<SetupRequest>,
 ) -> HttpResponse {
+    // Ensure DB tables exist in case the file was deleted while running
+    let _ = db::initialize_db(&data.db_path);
+
     let conn = match db::open_connection(&data.db_path) {
         Ok(c) => c,
         Err(e) => {
