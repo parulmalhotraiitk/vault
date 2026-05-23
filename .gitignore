@@ -1,0 +1,9 @@
+# Rust build artifacts
+vault-backend/target/
+
+# Node / Vite
+vault-frontend/node_modules/
+vault-frontend/dist/
+
+# OS
+.DS_Store

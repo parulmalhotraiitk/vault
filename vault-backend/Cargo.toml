@@ -1,0 +1,26 @@
+[package]
+name = "vault-backend"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "vault-backend"
+path = "src/main.rs"
+
+[dependencies]
+actix-web = "4"
+actix-cors = "0.7"
+rusqlite = { version = "0.31", features = ["bundled"] }
+argon2 = "0.5"
+aes-gcm = "0.10"
+jsonwebtoken = "9"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rand = "0.8"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4"] }
+tokio = { version = "1", features = ["full"] }
+base64 = "0.22"
+sha2 = "0.10"
+hex = "0.4"
+zxcvbn = "3"
